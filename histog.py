@@ -6,9 +6,10 @@ import numpy as np
 import scipy.stats as sp
 import matplotlib.pyplot as plt
 import io
+import login
 
 # Command for making connection to db
-con = pymysql.connect(host='localhost', user='s2255686', passwd='qeenreen', db='s2255686')
+con = pymysql.connect(host=login.host, user=login.user, passwd=login.passwd, db=login.db)
 cur = con.cursor()
 if(len(sys.argv) != 4) :
   print("Usage: histog.py col name where ; Nparams = ",sys.argv)
