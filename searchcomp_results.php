@@ -72,13 +72,14 @@ _VAL;
       <thead><tr>
       <th>CAT Number</th>
       <th>Manufacturer</th>
-      </tr></thead><tbody>
+      </tr></thead>
+    <tbody>
 _TABLE;
      for($j = 0 ; $j < $rows ; ++$j)
        {
          echo '<tr>';
 	 $row = mysql_fetch_row($result);
-         printf("<td><a href=showprops.php?cid=%s>%s</a></td> <td>%s</td>", 
+         printf("<td><a href=showprops.php?cid=%s target=\"_blank\" rel=\"noreferrer noopener\">%s</a></td> <td>%s</td>", 
 $row[0], $row[11], $manarray[$row[10]-1]);
          echo '</tr>';
        }

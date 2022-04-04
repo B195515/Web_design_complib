@@ -7,6 +7,7 @@ in the session associate array as supmask
 */
 session_start();
 require_once 'login.php';
+require 'myfuncs.php';
 echo<<<_HEAD1
 <html>
 <head>
@@ -26,7 +27,7 @@ echo<<<_HEAD1
   bottom: 0;
   left: 0;
   width: 300px;
-  height: 400px;
+  height: 50%;
   background-color: black;
   color: white;
   text-align: center;
@@ -38,21 +39,19 @@ echo<<<_HEAD1
 <body>
 _HEAD1;
 # Connect to db
-$db_server = mysql_connect($db_hostname,$db_username,$db_password);
-if(!$db_server) die("Unable to connect to database: " . mysql_error());
-mysql_select_db($db_database,$db_server) or die ("Unable to select database: " . mysql_error());     
+$db_server = dbset($db_hostname,$db_username,$db_password,$db_database);  
 
 # Selects all manufacturers
 $query = "select * from Manufacturers";
-     $result = mysql_query($query);
-     if(!$result) die("unable to process query: " . mysql_error());
-     $rows = mysql_num_rows($result);
-     $mask = 0;
-     mysql_close($db_server);
-     for($j = 0 ; $j < $rows ; ++$j)
-     {
-       $mask = (2 * $mask) + 1;
-     }
+$result = mysql_query($query);
+if(!$result) die("unable to process query: " . mysql_error());
+$rows = mysql_num_rows($result);
+$mask = 0;
+mysql_close($db_server);
+for($j = 0 ; $j < $rows ; ++$j)
+  {
+  $mask = (2 * $mask) + 1;
+  }
 # Store session's supplier selection
 $_SESSION['supmask'] = $mask;
 echo <<<_EOP
@@ -66,18 +65,21 @@ echo <<<_EOP
        else {alert(fail); return false}
 }
 </script>
+
 <!--Form to enter session user names-->
 <form action="indexp.php" method="post" onSubmit="return validate(this)">
 <div>
 <pre>
   <h1>Welcome to CompLib!</h1>
-  <h3>First Name:</h3><input type="text" name="fn"/>
-  <h3>Last Name:</h3><input type="text" name="sn"/>
+  <h2>First Name:</h2><input type="text" name="fn" style="border-radius:5px; text-align:center"/>
+  <h2>Last Name:</h2><input type="text" name="sn" style="border-radius:5px; text-align:center"/>
+  <br><br>
 
-<input type="submit" value="ENTER" style="height:50px; width:180px; font-size:20px" />
+<input type="submit" value="ENTER" style="height:100px; width:180px; font-size:20px; border-radius:10px" />
 </pre>
 </div>
 </form>
+</body>
+</html>
 _EOP;
-echo "</body></html>";
 ?>
