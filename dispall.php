@@ -31,16 +31,16 @@ echo <<<_MAIN1
 <p>Below is a table displaying the minimum, maximum, and average atoms (carbon, nitrogen, oxygen) per manufacturer:</p>
 <table border="1" width=100%>
   <tr>
-    <td>ID, Manufacturer</td>
-    <td>Min C</td>
-    <td>Max C</td>
-    <td>Avg C</td>
-    <td>Min N</td>
-    <td>Max N</td>
-    <td>Avg N</td>
-    <td>Min O</td>
-    <td>Max O</td>
-    <td>Avg O</td>
+    <th>Manufacturer</th>
+    <th>Min C</th>
+    <th>Max C</th>
+    <th>Avg C</th>
+    <th>Min N</th>
+    <th>Max N</th>
+    <th>Avg N</th>
+    <th>Min O</th>
+    <th>Max O</th>
+    <th>Avg O</th>
   </tr>
 _MAIN1;
 # Use simple sql summaries for each manufacturer
@@ -89,8 +89,8 @@ echo <<<_TAIL1
 </table>
 <table style="border:1px; width:200px;">
   <tr>
-    <td>ManID</td>
-    <td>Manufacturer</td>
+    <th>ManID</th>
+    <th>Manufacturer</th>
   </tr>
 _TAIL1;
 for($j = 0 ; $j < $manrows ; ++$j)
