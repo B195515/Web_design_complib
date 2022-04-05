@@ -13,28 +13,41 @@ echo<<<_HEAD1
 <head>
 <title>Welcome to CompLib</title>
 <style>
-	body {
+body {
   background-image: url('images/pexels-magda-ehlers-2569842.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
 }
-	div {
+div {
   position: absolute;
   margin: auto;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  width: 300px;
-  height: 50%;
-  background-color: black;
+  width: 35%;
+  height: 70%;
+  background-color: rgba(0,0,0,.7);
   color: white;
   text-align: center;
-  padding: 20px;
+  padding: none;
+  border-radius: 50%;
 }
+input[type=submit] {
+  height: 100px;
+  width: 180px;
+  font-size: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+input[type=submit]:hover {
+  background-color: black;
+  color: white;
+}  
 </style>
 </head>
+
 
 <body>
 _HEAD1;
@@ -70,12 +83,12 @@ echo <<<_EOP
 <form action="indexp.php" method="post" onSubmit="return validate(this)">
 <div>
 <pre>
+<br><br><br>
   <h1>Welcome to CompLib!</h1>
-  <h2>First Name:</h2><input type="text" name="fn" style="border-radius:5px; text-align:center"/>
-  <h2>Last Name:</h2><input type="text" name="sn" style="border-radius:5px; text-align:center"/>
-  <br><br>
-
-<input type="submit" value="ENTER" style="height:100px; width:180px; font-size:20px; border-radius:10px" />
+  <h2>First Name:</h2><input type="text" name="fn" style="border-radius:5px; text-align:center; font-size:16px"/>
+  <h2>Last Name:</h2><input type="text" name="sn" style="border-radius:5px; text-align:center; font-size:16px"/>
+  <br>
+<input type="submit" value="ENTER"/>
 </pre>
 </div>
 </form>

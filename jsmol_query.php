@@ -21,7 +21,7 @@ $dbid = array();
 get_manarray($dbfs,$dbid);
 echo <<<_MAIN1
 <p>Enter the Catalog ID of a compound and its corresponding Manufacturer.
-<br>Click OK to retrieve, then click Display to view an interactive <a href="http://jmol.sourceforge.net/" target="_blank" rel="noopener noreferrer">JSmol</a> object.
+<br>Click OK to retrieve, then click <i>Display</i> to view an interactive <a href="http://jmol.sourceforge.net/" target="_blank" rel="noopener noreferrer">JSmol</a> object.
 </p>
 _MAIN1;
 if(isset($_POST['tgval'])) 

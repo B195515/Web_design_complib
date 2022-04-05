@@ -38,14 +38,12 @@ These tables are formally defined as relational tables, with a common compound I
 
 <details>
 <summary>Data extraction</summary>
-<p> The data for these tables was extracted from a master sdf file containing all the entries of the compound from all manufacturers. Python scripts were used to parse each data into the relational database. 
+<p> The data for these tables was extracted from a master sdf file containing all the entries of the compound from all manufacturers. A combination of Python scripts and Java programs were used to generate additional properties for each compound, or to parse each data into the relational database. 
 </details>
+
 <details>
 <summary>Page linkage</summary>
-<p> The website uses php sessions to link the pages. Overall the structure of the website is of a master login page, coupled
-to an index page. from this index page there are hyperlinks to 7 functional pages.
-Each page include a mechanism to detect if a current seeion is still valid and a redirect to the master login page if
-no valid session is found. Each page also includes a a single menu page allowing access to each of the other pages.
+<p> The website uses php sessions to link the pages. Overall the structure of the website is of a master login page, coupled to an index page. from this index page there are hyperlinks to 12 functional pages. Each page includes a mechanism to detect if a current session is still valid and a redirect to the master login page if no valid session is found. Each page also includes a single menu page allowing access to each of the other pages. Several pages which require database access also use a script containing all the necessary functions to simplify the code in each page. A footer section is also included in all pages.
 </details>
 
 
@@ -132,7 +130,7 @@ Following is a description of the function of each page:
 
 <h2>Style</h2>
 <p>Stylistically this website is controlled by one master cascading style sheet "Simple.css". This stylesheet utilizes native HTML elements and is minimal in appearance to ease navigation. The Welcome and Exit page uses inline style elements separate from the main website for style purposes.
-<p>The tables generated from a query uses the basic css from a <a href="https://www.datatables.net/">JQuery dataTables function</a> which can be sorted and searched for its contents.
+<p>The tables generated from a query uses the basic css from a <a href="https://www.datatables.net/">JQuery dataTables function</a> which can be sorted and searched for its contents. Due to the large number of compounds in the <i>List Supplier</i> page, the table sorting function will only load once all the compounds have been retrieved.
 
 <h2>Updates</h2>
 <p>Documentation: <i>Updated: 29/03/2022</i>

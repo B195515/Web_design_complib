@@ -43,7 +43,9 @@ if(!$result) die("unable to process query: " . mysql_error());
 $resrows = mysql_num_rows($result);
 echo <<<_MAIN1
 <p>Selected Supplier ID: $chosen</p>
-<p>There are $resrows compounds associated with this supplier.</p>
+There are $resrows compounds associated with this supplier.
+\n<i><span style="font-size:10pt;color:red">Sorter function may take a while to load due to large database size</span></i>
+<br>
 _MAIN1;
 echo "<table id=\"myTable\" class=\"display\" width =\"100%\" border=\"1\" cellspacing=\"1\">\n<thead>\n<tr>";
     for($k = 0 ; $k < sizeof($dbfs) ; ++$k) {

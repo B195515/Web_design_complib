@@ -22,15 +22,16 @@ echo<<<_HEAD1
   bottom: 0;
   left: 0;
   width: 300px;
-  height: 400px;
+  height: 50%;
   overflow-wrap: break-word;
-  background-color: black;
+  background-color: rgba(0,0,0,.7);
   font-family: 'Lato', sans-serif;
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 20px;
+  border-radius:10px;
 }
 </style>
 </head>
@@ -50,6 +51,7 @@ echo <<<_MAIN1
   <h1>Thank you for using the Compound Library $fn $sn!</h1>
   <h3><a href="mailto:s2255686@ed.ac.uk" data-original-title><button type="button" id="feedback-button">Send feedback</button></a></h3>
 </div>
+</body>
+</html>
 _MAIN1;
-echo "</body></html>";
 ?>

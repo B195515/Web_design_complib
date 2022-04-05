@@ -2,6 +2,7 @@
 session_start();
 include 'redir.php';
 require_once 'login.php';
+require 'myfuncs.php';
 echo <<<_HEAD1
 <html>
 <head>
